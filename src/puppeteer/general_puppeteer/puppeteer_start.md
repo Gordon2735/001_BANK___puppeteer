@@ -1,0 +1,32 @@
+> Puppeteer is a Node.js library which provides a high-level API to control Chrome/Chromium over the [DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/). Puppeteer runs in [headless](https://developer.chrome.com/docs/chromium/new-headless/) mode by default, but can be configured to run in full ("headful") Chrome/Chromium.
+
+## [Get started](https://pptr.dev/docs) | [API](https://pptr.dev/api) | [FAQ](https://pptr.dev/faq) | [Contributing](https://pptr.dev/contributing) | [Troubleshooting](https://pptr.dev/troubleshooting)[​](https://pptr.dev/#get-started--api--faq--contributing--troubleshooting 'Direct link to get-started--api--faq--contributing--troubleshooting')
+
+## Example[​](https://pptr.dev/#example 'Direct link to Example')
+
+```typescript
+import puppeteer from 'puppeteer';
+(async () => {
+    // Launch the browser and open a new blank page
+    browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    // Navigate the page to a URL
+    await page.goto('https://developer.chrome.com/');
+    // Set screen size
+    page.setViewport({ width: 1080, height: 1024 });
+    // Type into search box
+    await page.type('.devsite-search-field', 'automate beyond recorder');
+    // Wait and click on first result
+    const searchResultSelector = '.devsite-result-item-link';
+    await page.waitForSelector(searchResultSelector);
+    await page.click(searchResultSelector);
+    // Locate the full title with a unique string
+    const textSelector = await page.waitForSelector(
+        'text/Customize and automate'
+    );
+    const fullTitle = await textSelector?.evaluate((el) => el.textContent);
+    // Print the full title
+    console.log('The title of this blog post is "%s".', fullTitle);
+    await browser.close();
+})();
+```

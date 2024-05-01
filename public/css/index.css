@@ -1,0 +1,53 @@
+/* 001_BANK___puppeteer CSS Index File */
+
+
+:root {
+    --pink: #ff87d4;
+    --blue: #87fffb;
+    --black: #171321;
+}
+
+@font-face {
+    font-family: "Days One", sans-serif;
+    src: url('../fonts/DaysOne-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: #b1acb9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+        Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 20px;
+}
+
+.post {
+    background: var(--black);
+    color: white;
+    margin: 3rem auto;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+
+/* this applies to ALL code elements in the .post */
+code {
+    color: var(--pink);
+    font-family: monospace;
+    font-size: 1.125em;
+}
+
+/* this applies ONLY to code elements not inside a pre tag */
+:not(pre)>code {
+    background: var(--blue);
+    color: var(--black);
+    margin: 0 0.125rem;
+    padding: 0 0.25rem;
+}
+
+/* styles to make this demo look a bit more polished */
