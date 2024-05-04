@@ -31,7 +31,7 @@ Quote reply
                     im trying to open multiple tabs in a single browser instance
                     , after they're done i close the tabs and then re-opening
                     those tabs every x seconds ... but i want to keep the
-                    browser itself open so i dont have to login in each tab on
+                    browser itself open so i don't have to login in each tab on
                     every loop
                 </p>
                 <p dir="auto">
@@ -75,7 +75,14 @@ page.close();
 setInterval(function (){
 init_puppeteer(settings)
 }, 50000 );
-</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0"><clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="var global_browser = false ;
+```
+
+```html
+</code></pre><div class="zeroclipboard-container position-absolute right-0 top-0"><clipboard-copy aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" data-tooltip-direction="w" value="var
+```
+
+```typescript
+global_browser = false ;
 async function init_puppeteer( settings ) {
 
     if(global_browser === false )
