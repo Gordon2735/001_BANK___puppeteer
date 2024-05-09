@@ -4,7 +4,7 @@
 :root {
     --pink: #ff87d4;
     --blue: #87fffb;
-    --black: #171321;
+    --black: hsla(257, 27%, 10%, 0.993);
 }
 
 @font-face {
@@ -48,6 +48,7 @@ code {
     color: var(--black);
     margin: 0 0.125rem;
     padding: 0 0.25rem;
+    border: solid 14px hsla(90, 100%, 50%, 0.993);
 }
 
 /* styles to make this demo look a bit more polished */
